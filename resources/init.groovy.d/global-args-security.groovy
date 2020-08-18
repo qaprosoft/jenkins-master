@@ -27,13 +27,13 @@ def adminEmails = env['ADMIN_EMAILS']
 def user = env['ADMIN_USER']
 def pass = env['ADMIN_PASS']
 
-def infraHost = env['INFRA_HOST']
+def infraHost = env['ZBR_HOST']
 def qpsPipelineGitURL = env['QPS_PIPELINE_GIT_URL']
 def qpsPipelineGitBranch = env['QPS_PIPELINE_GIT_BRANCH']
 
 def qpsPipelineLogLevel = env['QPS_PIPELINE_LOG_LEVEL']
 
-def sonarUrl = env['SONAR_URL']
+def sonarUrl = infraHost + "/sonarqube"
 
 // Constants
 def instance = Jenkins.getInstance()
