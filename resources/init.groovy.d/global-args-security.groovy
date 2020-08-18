@@ -35,6 +35,9 @@ def qpsPipelineLogLevel = env['QPS_PIPELINE_LOG_LEVEL']
 
 def sonarUrl = env['ZBR_SONAR_URL']
 
+println "INFRA_HOST: ${infraHost}"
+println "SONAR_URL: ${sonarUrl}"
+
 // Constants
 def instance = Jenkins.getInstance()
 def global_domain = Domain.global()
