@@ -35,9 +35,6 @@ def qpsPipelineLogLevel = env['QPS_PIPELINE_LOG_LEVEL']
 
 def sonarUrl = env['ZBR_SONAR_URL']
 
-println "INFRA_HOST: ${infraHost}"
-println "SONAR_URL: ${sonarUrl}"
-
 // Constants
 def instance = Jenkins.getInstance()
 def global_domain = Domain.global()
@@ -89,8 +86,9 @@ Thread.start {
         jlc.save()
     }
 
+    println "--> INFRA_HOST: ${infraHost}"
     if ( infraHost != null && !envVars.containsKey("ZBR_INFRA_HOST") ) {
-      envVars.put("INFRA_HOST", infraHost)
+      envVars.put("ZBR_INFRA_HOST", infraHost)
     }
 
     if ( qpsPipelineGitURL != null && !envVars.containsKey("QPS_PIPELINE_GIT_URL") ) {
@@ -109,8 +107,9 @@ Thread.start {
       envVars.put("ADMIN_EMAILS", adminEmails)
     }
 
+    println "--> SONAR_URL: ${sonarUrl}"
     if (sonarUrl != null && !envVars.containsKey("ZBR_SONAR_URL")) {
-        envVars.put("SONAR_URL", sonarUrl)
+        envVars.put("ZBR_SONAR_URL", sonarUrl)
     }
 
     // #166: NPE during disabling CLI: java.lang.NullPointerException: Cannot invoke method get() on null object
