@@ -86,7 +86,7 @@ Thread.start {
         jlc.save()
     }
 
-    if ( infraHost != null && !envVars.containsKey("INFRA_HOST") ) {
+    if ( infraHost != null && !envVars.containsKey("ZBR_INFRA_HOST") ) {
       envVars.put("INFRA_HOST", infraHost)
     }
 
@@ -106,7 +106,7 @@ Thread.start {
       envVars.put("ADMIN_EMAILS", adminEmails)
     }
 
-    if (sonarUrl != null && !envVars.containsKey("SONAR_URL")) {
+    if (sonarUrl != null && !envVars.containsKey("ZBR_SONAR_URL")) {
         envVars.put("SONAR_URL", sonarUrl)
     }
 
